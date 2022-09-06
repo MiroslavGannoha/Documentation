@@ -92,7 +92,7 @@ var postProcess = new BABYLON.BlurPostProcess("Horizontal blur", new BABYLON.Vec
 The kernel value will define the ideal number of taps done by the postprocess. The postprocess will then adapt the kernel based on screen size and DPI resolution.
 
 For instance here is an example with a kernel value of 32: <Playground id="#FBH4J7#3" title="Blur Post Process Example" description="Simple example of a blur post process."/>
-Or 256: <Playground id="#FBH4J7#4" title="Blur Post Process With Kernal Value Of 256" description="Simple example of a blur post process with a kernal value of 256."/>
+Or 256: <Playground id="#FBH4J7#4" title="Blur Post Process With Kernel Value Of 256" description="Simple example of a blur post process with a kernel value of 256."/>
 
 Obviously, as usual, try to stay reasonable with kernel size as it will impact the overall rendering speed.
 
