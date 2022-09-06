@@ -28,14 +28,14 @@ The _samplingMode_ can be one of the following:
 * BABYLON.Texture.BILINEAR_SAMPLINGMODE (**default**)
 * BABYLON.Texture.TRILINEAR_SAMPLINGMODE
 
-Please note that postprocesses with trilinear sampling will be forced to have a power of two size (256, 512, 1024, etc.)
+Please note that postprocesses with trilinear sampling will be forced to have a power of two sizes (256, 512, 1024, etc.)
 
 The _engine_ parameter is the engine where you want to attach your postprocess.
 
 The _reusable_ parameter indicates if your postprocess can be reused multiple times on the same camera (default is false).
 
 ## Additional parameters
-By default (and if you are not using trilinear sampling) postprocesses use the size of the screen scaled by the ratio you provide. But you can decide to force them to be rescaled to a power of two size in order to be more efficient. To enable this, just call `mypostprocess.alwaysForcePOT = true`.
+By default (and if you are not using trilinear sampling) postprocesses use the size of the screen scaled by the ratio you provide. But you can decide to force them to be rescaled to a power of two sizes in order to be more efficient. To enable this, just call `mypostprocess.alwaysForcePOT = true`.
 
 You can also control how the size is chosen by setting `mypostprocess.scaleMode` to one of these values:
 * BABYLON.Engine.SCALEMODE_FLOOR: Will find the next lowest power of two.
@@ -83,16 +83,16 @@ var postProcess = new BABYLON.BlackAndWhitePostProcess("bandw", 1.0, camera);
 ```
 
 ## Blur
-Apply a directional blur using a kernel based blur:
+Apply a directional blur using a kernel-based blur:
 
 ```javascript
 var postProcess = new BABYLON.BlurPostProcess("Horizontal blur", new BABYLON.Vector2(1.0, 0), kernel, 0.25, camera);
 ```
 
-The kernel value will define the ideal number of taps done by the postprocess. The postprocess will then adapt the kernel based on screen size and DPI resolution.
+The kernel value will define the ideal number of taps done by the postprocess. The postprocess will then adapt the kernel-based on screen size and DPI resolution.
 
 For instance here is an example with a kernel value of 32: <Playground id="#FBH4J7#3" title="Blur Post Process Example" description="Simple example of a blur post process."/>
-Or 256: <Playground id="#FBH4J7#4" title="Blur Post Process With Kernal Value Of 256" description="Simple example of a blur post process with a kernal value of 256."/>
+Or 256: <Playground id="#FBH4J7#4" title="Blur Post Process With Kernel Value Of 256" description="Simple example of a blur post process with a kernel value of 256."/>
 
 Obviously, as usual, try to stay reasonable with kernel size as it will impact the overall rendering speed.
 
@@ -134,7 +134,7 @@ The third parameter defines the exposure adjustment.
 You can find a demo here: <Playground id="#J9H084#8" title="Tonemap Post Process" description="Simple Example of a tonemap post process."/>
 
 ### ImageProcessing
-Apply a complete range of special image treaments (image processing):
+Apply a complete range of special image treatments (image processing):
 
 ```javascript
 var postProcess = new BABYLON.ImageProcessingPostProcess("processing", 1.0, camera);
@@ -175,7 +175,7 @@ Here is an example of a global configuration: <Playground id="#J9H084#13" title=
 
 Furthermore, as they share the same configuration, you can just dispose a postprocess you were using and automatically the image processing will be done at materials level. So here is an example of a configuration done at scene level, but with no postprocess to use it: <Playground id="#J9H084#14" title="Configuration At The Scene Level" description="Simple example of a scene level configuration."/> (As you can see the processing is then done by the material itself).
 
-You can also decide to instantiate your own configuration and affect it to your material or to your postprocess with `postProcess.imageProcessingConfiguration = new BABYLON.ImageProcessingConfiguration()`. In this case, you will be able to configure this object independantly.
+You can also decide to instantiate your own configuration and affect it to your material or to your postprocess with `postProcess.imageProcessingConfiguration = new BABYLON.ImageProcessingConfiguration()`. In this case, you will be able to configure this object independently.
 
 *Troubleshoot*
 If you use post-processes with built-in image processing features, you might run into brighter color issues.  
